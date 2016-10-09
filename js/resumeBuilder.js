@@ -1,14 +1,3 @@
-var awesomeThoughts;
-var funThoughts;
-var formattedName = HTMLheaderName.replace("%data%", "Logan Brick");
-var formattedRole = HTMLheaderRole.replace("%data%", "Electrical Engineer");
-
-awesomeThoughts="I'm Logan, and I am AWESOME MAN REALLY NEAT 100% FUNTIME JAM SESH."
-funThoughts = awesomeThoughts.replace("AWESOME", "FUN")
-
-//console.log(awesomeThoughts)
-//$("#main").append(funThoughts)
-
 var bio = {
   "name" : "Logan Brick",
   "role" : "Electrical Engineer",
@@ -26,18 +15,40 @@ var bio = {
   "bioPic" : "images/fry.jpg"
 }
 
-var work = {};
-work.position = "Friendly Chum";
-work.employer = "My friends";
-work.years = "24";
+var education = {
+  "schools": {
+    "name": "University of Wisconsin, Madison",
+    "city": "Madison, Wisconsin",
+    "degree": "Bachelors",
+    "majors": ["Electrical Engineering"],
+    "date": 2014,
+    "url":"http://wisc.edu"
+  }
+}
 
-var education = {};
-education["name"] = "University of Wisconsin, Madison";
-education["years"] = "2010-2014";
-education ["city"] = "Madison, Wisconsin";
+var work = {
+  "jobs": [
+    {
+      "employer": "Planet Express",
+      "title": "Delivery Boy",
+      "dates": "January 3000 - Future",
+      "description": "Picked things up and put them down elsewhere."
+    },
+    {
+      "employer": "Panucci's Pizza",
+      "title": "Delivery Boy",
+      "dates": "1998 - December 31, 1999",
+      "description": "Picked pizza up and put it down elsewhere."
+    }
+  ]
+}
 
-$("#main").append(work["position"]);
-$("#main").append(education.name);
-
-$("#header").prepend(formattedRole)
-$("#header").prepend(formattedName)
+var projects = {
+  "projects": [
+    {
+      "title": "Sample Project 1",
+      "dates": "2014",
+      "description": "DoooooooooMT"
+    }
+  ]
+}
