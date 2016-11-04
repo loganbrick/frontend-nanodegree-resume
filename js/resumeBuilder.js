@@ -104,7 +104,8 @@ var education = {
     var course;
     var len;
     var len2;
-    var len3;
+
+    //Add the college work!
 
     for (school = 0, len = education.schools.length; school < len; school++) {
 
@@ -134,7 +135,7 @@ var education = {
     //Start the Online Courses section
     $("#education").append(HTMLonlineClasses);
 
-    for (course = 0, len3 = education.onlineCourses.length; course < len3; course++) {
+    for (course = 0, len = education.onlineCourses.length; course < len; course++) {
 
       //Append a new online course
       $("#education").append(HTMLschoolStart);
