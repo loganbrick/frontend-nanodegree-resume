@@ -34,7 +34,7 @@ var bio = {
     $("#name").after(formattedBioRole);
 
 
-    //Insert my bio's contacts. len is dependent on the amount of bio.contacts keys
+    //Insert my bio's contacts. len is dependent on the amount of bio.contacts keys--avoiding for-in
     for (var contact = 0, len = Object.keys(bio.contacts).length; contact < len; contact++) {
 
       //Get the contact name using Object keys
@@ -43,6 +43,7 @@ var bio = {
       formattedContact = HTMLcontactGeneric.replace("%contact%", bioContactType).replace("%data%", bio.contacts[bioContactType]);
       //Append the contact information to the resume
       $("#topContacts").append(formattedContact);
+      $("#footerContacts").append(formattedContact);
     }
 
     //Add the welcome message
