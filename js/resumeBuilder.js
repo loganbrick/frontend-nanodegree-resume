@@ -14,6 +14,8 @@ var bio = {
   ],
   "biopic": "images_src/LBResized.jpg",
 
+  //The function to display biographic information
+
   "display": function() {
 
     //Define the variable for the Bio display
@@ -24,6 +26,10 @@ var bio = {
     var formattedBioPic;
     var formattedSkill;
     var formattedWelcome;
+    var contact;
+    var skill;
+    var len;
+    var len2;
 
     // Insert my bio name so that skills can be displayed
     formattedBioName = HTMLheaderName.replace("%data%", bio.name);
@@ -35,7 +41,7 @@ var bio = {
 
 
     //Insert my bio's contacts. len is dependent on the amount of bio.contacts keys--avoiding for-in
-    for (var contact = 0, len = Object.keys(bio.contacts).length; contact < len; contact++) {
+    for (contact = 0, len = Object.keys(bio.contacts).length; contact < len; contact++) {
 
       //Get the contact name using Object keys
       bioContactType = Object.keys(bio.contacts)[contact];
@@ -56,7 +62,7 @@ var bio = {
 
     // Add skills if there are any!
     $("#header").append(HTMLskillsStart);
-    for (var skill = 0, len = bio.skills.length; skill < len; skill++) {
+    for (skill = 0, len2 = bio.skills.length; skill < len2; skill++) {
 
       formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
       $("#skills").append(formattedSkill);
@@ -81,6 +87,8 @@ var education = {
     "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
   }],
 
+  //The function to display education information
+
   "display": function() {
 
     //Define education variable
@@ -91,8 +99,14 @@ var education = {
     var formattedEducationDates;
     var formattedEducationURL;
     var formattedEducationSchool;
+    var school;
+    var major;
+    var course;
+    var len;
+    var len2;
+    var len3;
 
-    for (var school = 0, len = education.schools.length; school < len; school++) {
+    for (school = 0, len = education.schools.length; school < len; school++) {
 
       //Append a new school
       $("#education").append(HTMLschoolStart);
@@ -110,7 +124,7 @@ var education = {
       $(".education-entry:last").append(formattedEducationLocation);
 
       //Majors requires additional logic because it is an array
-      for (var major = 0, len2 = education.schools[school].majors.length; major < len2; major++) {
+      for (major = 0, len2 = education.schools[school].majors.length; major < len2; major++) {
         formattedEducationMajors = HTMLschoolMajor.replace("%data%", education.schools[school].majors[major]);
         $(".education-entry:last").append(formattedEducationMajors);
       }
@@ -120,7 +134,7 @@ var education = {
     //Start the Online Courses section
     $("#education").append(HTMLonlineClasses);
 
-    for (var course = 0, len = education.onlineCourses.length; course < len; course++) {
+    for (course = 0, len3 = education.onlineCourses.length; course < len3; course++) {
 
       //Append a new online course
       $("#education").append(HTMLschoolStart);
@@ -162,6 +176,8 @@ var work = {
     "description": "A helpdesk position with the University of Wisconsin-Madison's Library Technolgy Group."
   }, ],
 
+  //The function to display work information
+
   "display": function() {
 
     //Define a variable for each element of the Work section
@@ -170,9 +186,11 @@ var work = {
     var formattedWorkLocation;
     var formattedWorkDates;
     var formattedWorkDescription;
+    var job;
+    var len;
 
     //For as long as a job remains in the jobs array, add it to the page
-    for (var job = 0, len = work.jobs.length; job < len; job++) {
+    for (job = 0, len = work.jobs.length; job < len; job++) {
 
       //Append a new work experience
       $("#workExperience").append(HTMLworkStart);
@@ -206,15 +224,21 @@ var projects = {
     "images": ["images_src/PSResized.png"]
   }],
 
-  "display": function() {
+  //The function to display projects information
 
-    for (var project = 0, len = projects.projects.length; project < len; project++) {
+  "display": function() {
 
       //Create project variables
       var formattedProjectTitle;
       var formattedProjectDates;
       var formattedProjectDescription;
       var formattedProjectImages;
+      var project;
+      var image;
+      var len;
+      var len2;
+
+    for (project = 0, len = projects.projects.length; project < len; project++) {
 
       //Append a new project
       $("#projects").append(HTMLprojectStart);
@@ -230,7 +254,7 @@ var projects = {
       $(".project-entry:last").append(formattedProjectDescription);
 
       //Project images requires additional logic because it is an array
-      for (var image = 0, len2 = projects.projects[project].images.length; image < len2; image++) {
+      for (image = 0, len2 = projects.projects[project].images.length; image < len2; image++) {
         formattedProjectImages = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
         $(".project-entry:last").append(formattedProjectImages);
       }
