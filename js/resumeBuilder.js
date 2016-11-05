@@ -265,7 +265,6 @@ var projects = {
         $(".project-entry:last").append(formattedProjectImages);
       }
 
-      console.log(project);
     }
   }
 };
