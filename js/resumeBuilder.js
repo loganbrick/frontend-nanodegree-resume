@@ -84,7 +84,7 @@ var education = {
     "title": "Frond-End Web Developer Nanodegree",
     "school": "Udacity.com",
     "dates": "September, 2015 - Present",
-    "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
+    "url": "http://udacity.com"
   }],
 
   //The function to display education information
@@ -113,11 +113,10 @@ var education = {
       $("#education").append(HTMLschoolStart);
 
       //Set all the variables to formatted version of the current school's elements
-      formattedEducationName = HTMLschoolName.replace("%data%", education.schools[school].name);
+      formattedEducationName = HTMLschoolName.replace("%data%", education.schools[school].name).replace("#", education.schools[school].url);
       formattedEducationDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
       formattedEducationDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
       formattedEducationLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
-      formattedEducationURL = HTMLonlineURL.replace("%data%", education.schools[school].url).replace("#", education.schools[school].url);
 
       //Append each school variable to the education section
       $(".education-entry:last").append(formattedEducationName);
@@ -130,8 +129,6 @@ var education = {
         formattedEducationMajors = HTMLschoolMajor.replace("%data%", education.schools[school].majors[major]);
         $(".education-entry:last").append(formattedEducationMajors);
       }
-
-      $(".education-entry:last").append(formattedEducationURL);
 
     }
 
@@ -146,10 +143,10 @@ var education = {
       $("#education").append(HTMLschoolStart);
 
       //Set the online course variables
-      formattedEducationName = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title);
+      formattedEducationName = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title).replace("#", education.onlineCourses[course].url);
       formattedEducationSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school);
       formattedEducationDates = HTMLonlineDates.replace("%data%", education.onlineCourses[course].dates);
-      formattedEducationURL = HTMLonlineURL.replace("%data%", education.onlineCourses[course].url).replace("#", education.onlineCourses[course].url);;
+      formattedEducationURL = HTMLonlineURL.replace("%data%", education.onlineCourses[course].url).replace("#", education.onlineCourses[course].url);
 
       //Append each online course variable
       $(".education-entry:last").append(formattedEducationName);
@@ -234,15 +231,15 @@ var projects = {
 
   "display": function() {
 
-      //Create project variables
-      var formattedProjectTitle;
-      var formattedProjectDates;
-      var formattedProjectDescription;
-      var formattedProjectImages;
-      var project;
-      var image;
-      var len;
-      var len2;
+    //Create project variables
+    var formattedProjectTitle;
+    var formattedProjectDates;
+    var formattedProjectDescription;
+    var formattedProjectImages;
+    var project;
+    var image;
+    var len;
+    var len2;
 
     for (project = 0, len = projects.projects.length; project < len; project++) {
 
