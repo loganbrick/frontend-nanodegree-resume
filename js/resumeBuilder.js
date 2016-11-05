@@ -117,6 +117,7 @@ var education = {
       formattedEducationDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
       formattedEducationDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
       formattedEducationLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
+      formattedEducationURL = HTMLonlineURL.replace("%data%", education.schools[school].url).replace("#", education.schools[school].url);
 
       //Append each school variable to the education section
       $(".education-entry:last").append(formattedEducationName);
@@ -130,7 +131,11 @@ var education = {
         $(".education-entry:last").append(formattedEducationMajors);
       }
 
+      $(".education-entry:last").append(formattedEducationURL);
+
     }
+
+    //Add school URL
 
     //Start the Online Courses section
     $("#education").append(HTMLonlineClasses);
@@ -144,7 +149,7 @@ var education = {
       formattedEducationName = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title);
       formattedEducationSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school);
       formattedEducationDates = HTMLonlineDates.replace("%data%", education.onlineCourses[course].dates);
-      fromattedEducationURL = HTMLonlineURL.replace("%data%", education.onlineCourses[course].url);
+      formattedEducationURL = HTMLonlineURL.replace("%data%", education.onlineCourses[course].url).replace("#", education.onlineCourses[course].url);;
 
       //Append each online course variable
       $(".education-entry:last").append(formattedEducationName);
